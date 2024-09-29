@@ -8,14 +8,11 @@ import About from "../components/about";
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
 export default function Home() {
-    const [starsFalling, setStarsFalling] = useState(false);
     const totalStars = 10000; // Total number of stars
     const starInterval = 100; // Create a star every 100 milliseconds (0.1 seconds)
     const fallingDuration = 5; // Duration of falling in seconds
 
     useEffect(() => {
-        // Start falling stars immediately
-        setStarsFalling(true);
 
         // Create stars at intervals
         let starCount = 0;
@@ -33,6 +30,7 @@ export default function Home() {
 
     const createStar = () => {
         const spaceBackground = document.querySelector('.space-background');
+        if (!spaceBackground) return;
         const star = document.createElement('div');
         star.className = 'star fall'; // Add fall class immediately
         const size = Math.random() * 2 + 1; // Random size for stars

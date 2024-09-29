@@ -35,7 +35,7 @@ export default function Projects() {
   ];
 
   // Function to handle navigation with fade-out animation
-  const handleNavigation = (url) => {
+  const handleNavigation = (url: string) => {
     setIsLeaving(true); // Trigger fade out
     setTimeout(() => {
       router.push(url); // Navigate to the new page after fade-out
