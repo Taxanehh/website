@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Hero from "./components/Hero";
-import Footer from  "./components/footer";
+import Footer from  "../components/footer";
 import { Space_Grotesk } from '@next/font/google';
+import About from "../components/about";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
@@ -54,12 +54,11 @@ export default function Home() {
         <div className={`${spaceGrotesk.className} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 relative`}>
             <div className="space-background"></div>
             <main className="flex-grow flex flex-col gap-8 row-start-2 items-center sm:items-start relative z-10">
-                <Hero />
+              <About />
             </main>
             <div className="z-10 sticky top-[100vh]">
-                <Footer />
+              <Footer />
             </div>
-              
         </div>
     );
 }

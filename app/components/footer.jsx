@@ -38,9 +38,9 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 3, duration: 1 }} // 3 seconds delay, 1 second fade-in
-            className="w-full py-4 text-center text-[#808080] relative z-10"
+            className="text-[#808080] "
         >
-            <p>© {romanYear} Taxane. All rights reserved.</p>
+            <p>© {romanYear} Paul S. All rights reserved.</p>
         </motion.footer>
     );
 };
