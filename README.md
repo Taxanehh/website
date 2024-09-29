@@ -8,8 +8,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 - [Getting Started](#getting-started)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Learn More](#learn-more)
 - [Contributing](#contributing)
 - [License](#license)
 
