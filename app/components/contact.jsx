@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { FaGithub, FaDiscord, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
 export default function Contact() {
   const router = useRouter();
@@ -62,7 +62,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 0.6 } }}
             >
-              Feel free to reach out through any of the platforms below!
+              Feel free to reach out through any of the platforms below! Or on Discord: paulus2692
             </motion.p>
 
             {/* Icons and Links */}
@@ -72,23 +72,19 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 0.9 } }}
             >
               {/* GitHub */}
-              <a href="YOUR_GITHUB_LINK" target="_blank" className="hover:text-gray-300 transition">
+              <a href="https://github.com/Taxanehh" target="_blank" className="hover:text-gray-300 transition">
                 <FaGithub />
               </a>
               {/* LinkedIn */}
-              <a href="YOUR_LINKEDIN_LINK" target="_blank" className="hover:text-gray-300 transition">
+              <a href="https://www.linkedin.com/in/paul-stokreef/" target="_blank" className="hover:text-gray-300 transition">
                 <FaLinkedin />
               </a>
-              {/* Discord */}
-              <a href="YOUR_DISCORD_LINK" target="_blank" className="hover:text-gray-300 transition">
-                <FaDiscord />
-              </a>
               {/* Instagram */}
-              <a href="YOUR_INSTAGRAM_LINK" target="_blank" className="hover:text-gray-300 transition">
+              <a href="https://www.instagram.com/paul.stokreef/" target="_blank" className="hover:text-gray-300 transition">
                 <FaInstagram />
               </a>
               {/* Email */}
-              <a href="mailto:YOUR_EMAIL" target="_blank" className="hover:text-gray-300 transition">
+              <a href="mailto:paul.stokreef@gmail.com" target="_blank" className="hover:text-gray-300 transition">
                 <FaEnvelope />
               </a>
             </motion.div>
