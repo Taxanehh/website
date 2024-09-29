@@ -37,7 +37,7 @@ const Footer = () => {
         <motion.footer
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 3, duration: 1 }} // 3 seconds delay, 1 second fade-in
+            transition={{ delay: 1.5, duration: 0.5 }} // 3 seconds delay, 1 second fade-in
             className="text-[#808080] "
         >
             <p>© {romanYear} Paul S. All rights reserved.</p>

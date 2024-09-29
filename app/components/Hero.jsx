@@ -37,14 +37,14 @@ const Hero = () => {
           className="flex flex-col items-center justify-center text-center"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 1 } }} // Fade out on exit
+          exit={{ opacity: 0, transition: { duration: 0.5 } }} // Fade out on exit
         >
           {/* Projects, Contact, and About links */}
           <motion.div
             className="mb-16 space-x-4 text-lg sm:text-sm text-[#808080]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 1 }} // 3 seconds delay, 1 second fade-in
+            transition={{ delay: 1, duration: 0.25 }} // 3 seconds delay, 1 second fade-in
           >
             <a href="#projects" onClick={handleProjectClick} className="hover:text-[#dbdbdb] transition">
               Projects
@@ -62,7 +62,7 @@ const Hero = () => {
             className="py-3.5 px-0.5 z-10 text-4xl text-transparent font-extrabold bg-white cursor-default text-edge-outline font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text"
             initial={{ opacity: 0, scale: 1.2, color: "#000" }} // Start larger and in black
             animate={{ opacity: 1, scale: 1.0, color: "#fff" }} // Fade to white and original size
-            transition={{ duration: 1.5, ease: "easeInOut", delay: 1 }} // Smooth transition
+            transition={{ duration: 0.75, ease: "easeInOut", delay: 0.25 }} // Smooth transition
           >
             Paul S.
           </motion.h1>
@@ -72,7 +72,7 @@ const Hero = () => {
             className="mt-20 text-lg sm:text-sm text-[#808080]"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 1 }} // 3 seconds delay, 1 second fade-in
+            transition={{ delay: 1, duration: 1 }} // 3 seconds delay, 1 second fade-in
           >
             A Full-Time Cybersecurity Student and developer in training <br />
             Currently building a{" "}

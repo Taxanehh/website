@@ -35,7 +35,7 @@ export default function Projects() {
   ];
 
   // Function to handle navigation with fade-out animation
-  const handleNavigation = (url: string) => {
+  const handleNavigation = (url) => {
     setIsLeaving(true); // Trigger fade out
     setTimeout(() => {
       router.push(url); // Navigate to the new page after fade-out
@@ -47,8 +47,8 @@ export default function Projects() {
       {!isLeaving && (
         <motion.div
           className="min-h-screen bg-[#101010] text-white p-8 sm:p-12"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }} // Initial state for fade-in
+          animate={{ opacity: 1, transition: { duration: 1 } }} // Fade-in animation
           exit={{ opacity: 0, transition: { duration: 1 } }} // Fade-out on exit
         >
           {/* Back arrow and About/Contact links */}
@@ -77,10 +77,20 @@ export default function Projects() {
 
           {/* Main content */}
           <main>
-            <h1 className="text-5xl font-bold mb-4">Projects</h1>
-            <p className="text-lg text-gray-400 mb-8">
+            <motion.h1
+              className="text-5xl font-bold mb-4"
+              initial={{ opacity: 0, y: 30 }} // Fade-in for the main header
+              animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 0.3 } }} // Staggered animation
+            >
+              Projects
+            </motion.h1>
+            <motion.p
+              className="text-lg text-gray-400 mb-8"
+              initial={{ opacity: 0, y: 30 }} // Fade-in for the paragraph
+              animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 0.6 } }} // Staggered animation
+            >
               Some of the projects are from school and some are on my own time.
-            </p>
+            </motion.p>
 
             {/* Important Projects */}
             <section className="grid gap-8 mb-16">
@@ -88,9 +98,9 @@ export default function Projects() {
                 <motion.div
                   key={index}
                   className="p-8 bg-[#1a1a1a] rounded-lg shadow-md"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  initial={{ opacity: 0, y: 20 }} // Fade-in for important projects
+                  animate={{ opacity: 1, y: 0 }} // Animate to visible
+                  transition={{ duration: 1, delay: 0.3 + index * 0.2 }} // Staggered animation with delay
                 >
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-sm text-gray-400">{project.date}</span>
@@ -114,9 +124,9 @@ export default function Projects() {
                 <motion.div
                   key={index}
                   className="p-6 bg-[#1a1a1a] rounded-lg shadow-md"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  initial={{ opacity: 0, y: 20 }} // Fade-in for other projects
+                  animate={{ opacity: 1, y: 0 }} // Animate to visible
+                  transition={{ duration: 1, delay: 0.5 + index * 0.2 }} // Staggered animation with delay
                 >
                   <div className="flex justify-between items-center mb-4">
                     <span className="text-sm text-gray-400">{project.date}</span>
