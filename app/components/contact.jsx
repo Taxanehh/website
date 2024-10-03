@@ -105,7 +105,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 0.6 } }}
             >
-              Feel free to reach out through any of the platforms below! Or on Discord: paulus2692
+              Feel free to reach out through any of the platforms below!
             </motion.p>
 
             {/* Icons and Links */}
