@@ -41,15 +41,6 @@ const Footer = () => {
             className="text-[#808080] px-2 py-0.5"
         >
             <p className="text-center">© {romanYear} Paul S. All rights reserved.</p>
-            <p className="flex items-center justify-center text-center">
-                Brother of &nbsp;
-                <a 
-                    href="https://robert-s.dev/" 
-                    className="text-[#808080] hover:text-[#dbdbdb] underline transition"
-                >
-                    Robert S.
-                </a>
-            </p>
         </motion.footer>
     );
 };
