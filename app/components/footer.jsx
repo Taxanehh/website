@@ -37,10 +37,19 @@ const Footer = () => {
         <motion.footer
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 0.5 }} // 3 seconds delay, 1 second fade-in
-            className="text-[#808080] "
+            transition={{ delay: 1.5, duration: 0.5 }} // 1.5 seconds delay, 0.5 seconds fade-in
+            className="text-[#808080] px-2 py-0.5"
         >
-            <p>© {romanYear} Paul S. All rights reserved.</p>
+            <p className="text-center">© {romanYear} Paul S. All rights reserved.</p>
+            <p className="flex items-center justify-center text-center">
+                Brother of &nbsp;
+                <a 
+                    href="https://robert-s.dev/" 
+                    className="text-[#808080] hover:text-[#dbdbdb] underline transition"
+                >
+                    Robert S.
+                </a>
+            </p>
         </motion.footer>
     );
 };

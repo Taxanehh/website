@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 export default function About() {
   const router = useRouter();
   const [isLeaving, setIsLeaving] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleNavigation = (url) => {
     setIsLeaving(true);
@@ -13,24 +15,34 @@ export default function About() {
     }, 1000);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
     <AnimatePresence>
       {!isLeaving && (
         <motion.div
-          className="min-h-screen bg-[#101010] text-white px-8 sm:px-12 lg:px-24 xl:px-32 py-8"
+          className="min-h-screen bg-[#101010] text-white px-4 sm:px-8 lg:px-16 xl:px-24 py-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 1 } }}
           exit={{ opacity: 0, transition: { duration: 1 } }}
         >
           {/* Back button and Projects/Contact links */}
-          <header className="flex justify-between items-center mb-16">
+          <header className="flex justify-between items-center mb-8">
             <motion.a
               onClick={() => handleNavigation('/')}
               className="text-white text-2xl hover:text-gray-300 cursor-pointer transition"
             >
               ←
             </motion.a>
-            <nav className="space-x-8">
+            {/* Hamburger Icon */}
+            <div className="block sm:hidden">
+              <button onClick={toggleMenu} className="text-white text-2xl">
+                {isMenuOpen ? <FaTimes /> : <FaBars />}
+              </button>
+            </div>
+            <nav className="hidden sm:flex space-x-4">
               <motion.a
                 onClick={() => handleNavigation('/projects')}
                 className="hover:text-gray-300 cursor-pointer transition"
@@ -45,6 +57,38 @@ export default function About() {
               </motion.a>
             </nav>
           </header>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                className="fixed inset-0 z-10 bg-[#101010] bg-opacity-90 flex flex-col items-center justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 0.3 } }}
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
+              >
+                {/* Close Button */}
+                <button
+                  onClick={toggleMenu}
+                  className="absolute top-4 right-4 text-white text-2xl"
+                >
+                  <FaTimes />
+                </button>
+                <motion.a
+                  onClick={() => { handleNavigation('/projects'); setIsMenuOpen(false); }}
+                  className="text-white text-2xl hover:text-gray-300 mb-4"
+                >
+                  Projects
+                </motion.a>
+                <motion.a
+                  onClick={() => { handleNavigation('/contact'); setIsMenuOpen(false); }}
+                  className="text-white text-2xl hover:text-gray-300 mb-4"
+                >
+                  Contact
+                </motion.a>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Main content */}
           <main>
