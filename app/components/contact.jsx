@@ -148,7 +148,7 @@ export default function Contact() {
               
               {/* Discord (non-clickable) */}
               <div className="flex flex-col items-center pt-4">
-                <FaDiscord className="text-3xl text-gray-400 " />
+                <FaDiscord className="hover:text-gray-300 transition text-3xl" />
                 <p className="text-gray-400 text-sm">paulus2692</p>
               </div>
             </motion.div>
