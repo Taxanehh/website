@@ -134,6 +134,19 @@ export default function Projects() {
                 animate={{ opacity: 1, transition: { duration: 0.3 } }}
                 exit={{ opacity: 0, transition: { duration: 0.3 } }}
               >
+                {/* Close Button */}
+                <button
+                  onClick={toggleMenu}
+                  className="absolute top-4 right-4 text-white text-2xl"
+                >
+                  <FaTimes />
+                </button>
+                <motion.a
+                  onClick={() => { handleNavigation('/'); setIsMenuOpen(false); }}
+                  className="text-white text-2xl hover:text-gray-300 mb-4"
+                >
+                  Home
+                </motion.a>
                 <motion.a
                   onClick={() => { handleNavigation('/about'); setIsMenuOpen(false); }}
                   className="text-white text-2xl hover:text-gray-300 mb-4"

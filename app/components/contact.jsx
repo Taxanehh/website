@@ -75,6 +75,12 @@ export default function Contact() {
                   <FaTimes />
                 </button>
                 <motion.a
+                  onClick={() => { handleNavigation('/'); setIsMenuOpen(false); }}
+                  className="text-white text-2xl hover:text-gray-300 mb-4"
+                >
+                  Home
+                </motion.a>
+                <motion.a
                   onClick={() => { handleNavigation('/projects'); setIsMenuOpen(false); }}
                   className="text-white text-2xl hover:text-gray-300 mb-4"
                 >
