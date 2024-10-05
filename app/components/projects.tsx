@@ -12,9 +12,9 @@ export default function Projects() {
   // Sample data for important and other projects
   const importantProjects = [
     {
-      title: 'PSS, Protect, Store, Succeed',
-      description: 'An open-source Secret Manager for storing passwords',
-      githubLink: 'https://github.com/Taxanehh/Secretmanager',
+      title: 'TO BE ANNOUNCED',
+      description: 'TO BE ANNOUNCED',
+      githubLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       date: 'September 2024',
     },
     {
@@ -33,16 +33,16 @@ export default function Projects() {
 
   const otherProjects = [
     {
-      title: 'CodeByPaul.com',
+      title: 'stokreef.com',
       description: 'The website you are on right now',
       date: 'October 2024',
       githubLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     },
     {
-      title: 'TO BE ANNOUNCED',
-      description: 'Details will be revealed later.',
-      date: 'TO BE ANNOUNCED',
-      githubLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      title: 'PSS: Protect, Store, Succeed',
+      description: 'An open-source Secret Manager for storing passwords',
+      date: 'October 2024',
+      githubLink: 'https://github.com/Taxanehh/Secretmanager',
     },
     {
       title: 'TO BE ANNOUNCED',
