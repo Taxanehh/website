@@ -36,11 +36,11 @@ export default function Projects() {
       title: 'stokreef.com',
       description: 'The website you are on right now',
       date: 'October 2024',
-      githubLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      githubLink: 'https://github.com/Taxanehh/website',
     },
     {
       title: 'PSS: Protect, Store, Succeed',
-      description: 'An open-source Secret Manager for storing passwords',
+      description: 'An open-source Flask Based Secret Manager for storing passwords',
       date: 'October 2024',
       githubLink: 'https://github.com/Taxanehh/Secretmanager',
     },
