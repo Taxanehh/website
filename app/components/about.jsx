@@ -111,7 +111,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0, transition: { duration: 1, delay: 0.6 } }}
             >
-              I&apos;m Paul S., a full-time Cybersecurity student and developer in training from the Netherlands.
+              I&apos;m Paul Stokreef, a full-time Cybersecurity student and developer in training from the Netherlands.
             </motion.p>
 
             <motion.p

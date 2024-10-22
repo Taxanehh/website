@@ -64,7 +64,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1.0, color: "#fff" }} // Fade to white and original size
             transition={{ duration: 0.75, ease: "easeInOut", delay: 0.25 }} // Smooth transition
           >
-            Paul S.
+            Paul Stokreef
           </motion.h1>
 
           {/* Description */}

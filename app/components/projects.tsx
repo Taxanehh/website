@@ -19,7 +19,7 @@ export default function Projects() {
     },
     {
       title: 'Bathroom Bandits Storefront',
-      description: 'Full-stack eCommerce platform using Next.js, Sequelize, MySQL and Node.js, featuring JWT auth., dynamic product pages and custom API integrations',
+      description: 'Full-stack eCommerce platform using Next.js, Sequelize, MySQL and Node.js, featuring JWT auth, dynamic product pages and custom API integrations',
       githubLink: 'https://github.com/Taxanehh/storefront',
       date: 'October 2024',
     },
