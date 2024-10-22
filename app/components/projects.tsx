@@ -12,16 +12,16 @@ export default function Projects() {
   // Sample data for important and other projects
   const importantProjects = [
     {
-      title: 'TO BE ANNOUNCED',
-      description: 'TO BE ANNOUNCED',
-      githubLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      title: 'PSS: Protect, Store, Succeed',
+      description: 'An open-source Flask Based Secret Manager for storing passwords',
+      githubLink: 'https://github.com/Taxanehh/Secretmanager',
       date: 'September 2024',
     },
     {
-      title: 'TO BE ANNOUNCED',
-      description: 'TO BE ANNOUNCED',
-      githubLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      date: 'TO BE ANNOUNCED',
+      title: 'Bathroom Bandits Storefront',
+      description: 'Full-stack eCommerce platform using Next.js, Sequelize, MySQL and Node.js, featuring JWT auth., dynamic product pages and custom API integrations',
+      githubLink: 'https://github.com/Taxanehh/storefront',
+      date: 'October 2024',
     },
     {
       title: 'TO BE ANNOUNCED',
@@ -39,10 +39,10 @@ export default function Projects() {
       githubLink: 'https://github.com/Taxanehh/website',
     },
     {
-      title: 'PSS: Protect, Store, Succeed',
-      description: 'An open-source Flask Based Secret Manager for storing passwords',
-      date: 'October 2024',
-      githubLink: 'https://github.com/Taxanehh/Secretmanager',
+      title: 'TO BE ANNOUNCED',
+      description: 'Details will be revealed later.',
+      date: 'TO BE ANNOUNCED',
+      githubLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     },
     {
       title: 'TO BE ANNOUNCED',
