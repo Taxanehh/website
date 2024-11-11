@@ -77,10 +77,10 @@ const Hero = () => {
             A Full-Time Cybersecurity Student and developer in training <br />
             Currently building a{" "}
             <a
-              href="https://github.com/Taxanehh/Secretmanager"
+              href="https://github.com/Taxanehh"
               className="text-[#808080] hover:text-[#dbdbdb] underline transition"
             >
-              Secret Manager
+              Security Dashboard / SOC
             </a>
           </motion.p>
         </motion.section>
