@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - PAUL STOKREEF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg: radial-gradient(ellipse at 60% 40%, #0a0c1a 60%, #050617 100%);
+            --fg: #eaf6ff;
+            --font: 'Space Grotesk', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            --nebula1: radial-gradient(ellipse at 70% 30%, #2e2a6b88 0%, #1b1b3a00 70%);
+            --nebula2: radial-gradient(ellipse at 30% 70%, #0fffcf33 0%, #1b1b3a00 70%);
+            --nebula3: radial-gradient(ellipse at 80% 80%, #6c5ce7aa 0%, #1b1b3a00 80%);
+        }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: var(--font);
+            overflow: hidden;
+        }
+        #starfield, #nebula-overlay {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        #nebula-overlay {
+            background:
+                var(--nebula1),
+                var(--nebula2),
+                var(--nebula3);
+            opacity: 0.7;
+            mix-blend-mode: lighten;
+            animation: nebula-move 18s linear infinite alternate;
+        }
+        @keyframes nebula-move {
+            0% { background-position: 0% 0%, 100% 100%, 50% 50%; }
+            100% { background-position: 20% 10%, 80% 90%, 60% 60%; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div id="nebula-overlay" aria-hidden="true"></div>
+    <div id="fade-bg-overlay"></div>
+    <nav class="main-nav" aria-label="Main">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="projects.html" class="nav-item">Projects</a>
+        <a href="about.html" class="nav-item">About</a>
+    </nav>
+    <main class="contact-main">
+        <div class="contact-center">
+
+            <h1 class="contact-title cosmic-glow contact-appear">Contact Me</h1>
+            <div class="contact-icons contact-icons-row contact-appear">
+            <a href="https://github.com/taxanehh" class="contact-icon github cosmic-float" target="_blank" rel="noopener" title="GitHub">
+                <span class="icon-orbit"></span>
+                <svg viewBox="0 0 24 24" fill="none" width="44" height="44"><circle cx="12" cy="12" r="12" fill="#181828"/><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.18.57.69.47C19.13 20.57 22 16.75 22 12.26 22 6.58 17.52 2 12 2Z" fill="#fff"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/paul-stokreef/" class="contact-icon linkedin cosmic-float" target="_blank" rel="noopener" title="LinkedIn">
+                <span class="icon-orbit"></span>
+                <svg viewBox="0 0 24 24" fill="none" width="44" height="44"><circle cx="12" cy="12" r="12" fill="#181828"/><path d="M19 19h-3v-5.2c0-1.24-.44-2.08-1.54-2.08-.84 0-1.34.57-1.56 1.12-.08.2-.1.48-.1.76V19h-3s.04-9 0-9.94h3v1.41c.4-.62 1.12-1.5 2.72-1.5C17.42 9.97 19 11.13 19 14.03V19ZM7.5 7.5A1.5 1.5 0 1 1 7.5 10a1.5 1.5 0 0 1 0-3Zm-1.5 2.06V19h3v-9.44h-3Z" fill="#fff"/></svg>
+            </a>
+            <a href="https://instagram.com/paulstokreef" class="contact-icon instagram cosmic-float" target="_blank" rel="noopener" title="Instagram">
+                <span class="icon-orbit"></span>
+                <svg viewBox="0 0 24 24" fill="none" width="44" height="44"><circle cx="12" cy="12" r="12" fill="#181828"/><g><rect x="7" y="7" width="10" height="10" rx="3" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="2.5" stroke="#fff" stroke-width="1.5"/><circle cx="16.2" cy="7.8" r="0.7" fill="#fff"/></g></svg>
+            </a>
+            <a href="mailto:paul@stokreef.com" class="contact-icon email cosmic-float" title="Email">
+                <span class="icon-orbit"></span>
+                <svg viewBox="0 0 24 24" fill="none" width="44" height="44"><circle cx="12" cy="12" r="12" fill="#181828"/><path d="M6.5 8.5h11a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1Zm0 0 5.5 4.5L17.5 8.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="contact-icon discord cosmic-float" title="Discord" tabindex="0">
+                <span class="icon-orbit"></span>
+                <svg viewBox="0 0 24 24" fill="none" width="44" height="44"><circle cx="12" cy="12" r="12" fill="#181828"/><path d="M17.5 17c-1.1-.5-2.1-.8-3.1-.9-.2.2-.4.4-.7.4s-.5-.1-.7-.4c-1 .1-2 .4-3.1.9-.2 0-.3-.2-.3-.3 0-4.2 1.9-7.6 4.1-7.6s4.1 3.4 4.1 7.6c0 .1-.1.3-.3.3ZM10.2 13.2c-.4 0-.7.4-.7.8s.3.8.7.8.7-.4.7-.8-.3-.8-.7-.8Zm3.6 0c-.4 0-.7.4-.7.8s.3.8.7.8.7-.4.7-.8-.3-.8-.7-.8Z" fill="#fff"/></svg>
+                <span class="discord-handle">paulus2692</span>
+            </div>
+        </div>
+    <style>
+    #fade-bg-overlay {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #050617;
+        z-index: 10000;
+        pointer-events: none;
+        opacity: 1;
+        transition: opacity 1.1s cubic-bezier(.2,.8,.2,1);
+    }
+    /* Remove card and glass backgrounds */
+    .contact-icons-row {
+        flex-direction: row;
+        gap: 2.7rem;
+        margin-bottom: 0;
+        margin-top: 2.5rem;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+    .contact-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 70vh;
+        z-index: 2;
+        position: relative;
+        width: 100vw;
+        overflow: hidden;
+    }
+    .contact-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+    }
+    .contact-title {
+        text-align: center;
+        width: 100vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-icons-row {
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    }
+    .cosmic-glow {
+        text-shadow: 0 0 32px #0fffcf99, 0 0 8px #2e2a6b88, 0 2px 24px #000a, 0 0 64px #6c5ce7cc;
+        color: #eaf6ff;
+        letter-spacing: 0.06em;
+        filter: brightness(1.2) drop-shadow(0 0 8px #0fffcf99);
+    }
+    .icon-orbit {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(circle, #0fffcf33 0%, #2e2a6b55 60%, transparent 100%);
+        opacity: 0.22;
+        filter: blur(4px) brightness(1.2);
+        animation: orbit-glow 4.5s linear infinite alternate;
+        transform: translate(-50%, -50%) scale(1);
+        transition: opacity 0.2s, filter 0.2s;
+    }
+    .contact-icon:hover .icon-orbit, .contact-icon:focus .icon-orbit {
+        opacity: 0.38;
+        filter: blur(8px) brightness(1.5);
+        animation-duration: 2.2s;
+    }
+    @keyframes orbit-glow {
+        0% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) scale(1.08) rotate(360deg); }
+    }
+    .cosmic-float {
+        animation: float-cosmic 4.2s ease-in-out infinite alternate;
+    }
+    @keyframes float-cosmic {
+        0% { transform: translateY(0) scale(1); }
+        100% { transform: translateY(-12px) scale(1.04); }
+    }
+    .contact-title {
+        color: #eaf6ff;
+        font-size: 2.1rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 24px #000a, 0 0 8px #0fffcf55, 0 0 32px #2e2a6b88;
+        text-align: center;
+        filter: brightness(1.2);
+        opacity: 0;
+        transform: scale(0.85) translateY(30px);
+        filter: blur(12px) brightness(1.2);
+        animation: nebula-explode-in 1.1s cubic-bezier(.2,.8,.2,1) 0.5s forwards;
+    }
+    .contact-appear {
+        opacity: 0;
+        transform: scale(0.85) translateY(30px);
+        filter: blur(12px) brightness(1.2);
+        animation: nebula-explode-in 1.1s cubic-bezier(.2,.8,.2,1) 0.5s forwards;
+    }
+    .contact-icons.contact-appear {
+        animation-delay: 0.85s;
+    }
+    @keyframes nebula-explode-in {
+        0% {
+            opacity: 0;
+            transform: scale(0.85) translateY(30px);
+            filter: blur(12px) brightness(1.2);
+        }
+        60% {
+            opacity: 1;
+            transform: scale(1.08) translateY(-8px);
+            filter: blur(2px) brightness(1.3);
+        }
+        80% {
+            opacity: 1;
+            transform: scale(0.98) translateY(0px);
+            filter: blur(0.5px) brightness(1.1);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0px);
+            filter: blur(0) brightness(1);
+        }
+    }
+    .contact-center {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+    }
+
+    .contact-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.2rem 2.7rem;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2.5rem;
+        z-index: 2;
+    }
+    .contact-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(120deg, #181828 80%, #0fffcf22 100%);
+        border-radius: 1.1rem;
+        box-shadow: 0 0 24px 4px #0fffcf33, 0 0 0 2px #2e2a6b88;
+        padding: 1.1rem 1.2rem 1.1rem 1.2rem;
+        min-width: 80px;
+        min-height: 80px;
+        transition: box-shadow 0.18s, transform 0.18s, background 0.18s;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        overflow: visible;
+    }
+    .contact-icon:hover, .contact-icon:focus {
+        box-shadow: 0 0 32px 8px #0fffcf99, 0 0 0 4px #2e2a6b88;
+        transform: scale(1.09) rotate(-2deg);
+        background: linear-gradient(120deg, #23243a 60%, #0fffcf33 100%);
+    }
+    .contact-icon svg {
+        display: block;
+        margin-bottom: 0.7em;
+        filter: drop-shadow(0 2px 8px #0fffcf55) brightness(1.2);
+        z-index: 2;
+    }
+        .discord-handle {
+            color: #fff;
+            font-size: 1.13rem;
+            font-weight: 700;
+            margin-top: 0.32em;
+            user-select: all;
+            letter-spacing: 0.01em;
+            text-align: center;
+            display: block;
+            text-shadow: 0 2px 8px #000a;
+        }
+    @keyframes holo-flicker {
+        0% { opacity: 0.85; filter: brightness(1.2) blur(0.2px); }
+        100% { opacity: 1; filter: brightness(1.4) blur(0.5px); }
+    }
+    @media (max-width: 700px) {
+        .contact-title { font-size: 1.3rem; }
+        .contact-icons { gap: 1.2rem 1.2rem; }
+        .contact-icon { padding: 0.7rem 0.7rem; min-width: 60px; min-height: 60px; }
+        .contact-icon svg { width: 32px; height: 32px; }
+        .discord-handle, .cosmic-holo { font-size: 0.98rem; }
+    }
+    </style>
+    </main>
+    <style>
+    .main-nav {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        position: relative;
+        z-index: 10;
+        margin-top: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+    .nav-item {
+        color: rgb(128 128 128);
+        background: none;
+        font-family: var(--font);
+        font-size: .98rem;
+        font-weight: 600;
+        text-decoration: none;
+        position: relative;
+        opacity: 0;
+        transform: translateY(1.5em);
+        transition: color 0.18s, background 0.18s;
+        cursor: pointer;
+        padding: 0 0.3em;
+        border-radius: 0.2em;
+        outline: none;
+        letter-spacing: 0.03em;
+    }
+    .nav-item:focus {
+        color: #888888;
+        background: #eaeaff;
+    }
+    .nav-item::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0; bottom: -0.18em;
+        width: 100%; height: 3px;
+        background: linear-gradient(90deg,#888 0%,#ccc 100%);
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform 0.32s cubic-bezier(.2,.8,.2,1);
+    }
+    .nav-item:hover::after, .nav-item:focus::after {
+        transform: scaleX(1);
+    }
+    .nav-item.animated, .nav-item.nav-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.5s cubic-bezier(.2,.8,.2,1), transform 0.5s cubic-bezier(.2,.8,.2,1);
+        color: #ffeaa7;
+    }
+    .contact-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 70vh;
+        z-index: 2;
+        position: relative;
+        width: 100vw;
+        overflow: hidden;
+    }
+    .contact-title {
+        color: #ffeaa7;
+        font-size: 2.1rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        margin-bottom: 2.2rem;
+        text-shadow: 0 2px 24px #000a, 0 0 8px #ffeaa755;
+        text-align: center;
+    }
+    .contact-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.2rem 2.7rem;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2.5rem;
+    }
+    .contact-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(120deg, #23243a 80%, #6c5ce733 100%);
+        border-radius: 1.1rem;
+        box-shadow: 0 0 24px 4px #6c5ce7cc, 0 0 0 2px #ffeaa7cc;
+        padding: 1.1rem 1.2rem 1.1rem 1.2rem;
+        min-width: 80px;
+        min-height: 80px;
+        transition: box-shadow 0.18s, transform 0.18s;
+        cursor: pointer;
+        position: relative;
+    }
+    .contact-icon:hover, .contact-icon:focus {
+        box-shadow: 0 0 32px 8px #ffeaa7cc, 0 0 0 4px #6c5ce7cc;
+        transform: scale(1.07);
+    }
+    .contact-icon svg {
+        display: block;
+        margin-bottom: 0.7em;
+        filter: drop-shadow(0 2px 8px #ffeaa755);
+    }
+    .discord-handle {
+        color: #27ff7e;
+        font-size: 1.08rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        text-shadow: 0 0 8px #27ff7e99;
+        margin-top: 0.2em;
+        user-select: all;
+    }
+    @media (max-width: 700px) {
+        .contact-title { font-size: 1.3rem; }
+        .contact-icons { gap: 1.2rem 1.2rem; }
+        .contact-icon { padding: 0.7rem 0.7rem; min-width: 60px; min-height: 60px; }
+        .contact-icon svg { width: 32px; height: 32px; }
+        .discord-handle { font-size: 0.98rem; }
+    }
+    </style>
+    <script>
+    // Fade in background overlay on load
+    window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            var overlay = document.getElementById('fade-bg-overlay');
+            if (overlay) overlay.style.opacity = '0';
+        }, 60); // allow paint, then fade
+        setTimeout(function() {
+            var overlay = document.getElementById('fade-bg-overlay');
+            if (overlay) overlay.style.display = 'none';
+        }, 1200); // after fade
+    });
+    // Animate nav items on load
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            const navEls = Array.from(document.querySelectorAll('.nav-item'));
+            navEls.forEach((el, i) => {
+                setTimeout(() => {
+                    el.classList.add('animated');
+                }, i * 80);
+            });
+        }, 200);
+
+        // Cosmic dust/particle effect around icons
+        const icons = document.querySelectorAll('.contact-icon');
+        icons.forEach((icon, idx) => {
+            for (let i = 0; i < 8; i++) {
+                const p = document.createElement('span');
+                p.className = 'cosmic-dust';
+                p.style.setProperty('--angle', `${(i * 360 / 8) + (idx * 30)}deg`);
+                p.style.setProperty('--delay', `${Math.random() * 2}s`);
+                icon.appendChild(p);
+            }
+        });
+    });
+    </script>
+    <script>
+    // Enhanced starfield renderer with twinkling and color for deep space
+    (function() {
+        const canvas = document.getElementById('starfield');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d', { alpha: true });
+        let stars = [];
+        let width = 0, height = 0, dpr = Math.max(1, window.devicePixelRatio || 1);
+        function rand(min, max) { return Math.random() * (max - min) + min; }
+        function sizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = Math.floor(width * dpr);
+            canvas.height = Math.floor(height * dpr);
+            canvas.style.width = width + 'px';
+            canvas.style.height = height + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            const area = width * height;
+            const target = Math.min(1800, Math.floor(area / 1200));
+            const nowS = performance.now() / 1000;
+            const cx = width / 2, cy = height / 2;
+            const maxR = Math.sqrt(cx*cx + cy*cy);
+            const colors = [
+                'rgba(255,255,255,',
+                'rgba(0,255,255,',
+                'rgba(44,255,255,',
+                'rgba(120,180,255,',
+                'rgba(255,200,255,',
+                'rgba(0,255,180,',
+                'rgba(120,255,255,'
+            ];
+            stars = new Array(target).fill(0).map(() => {
+                const theta0 = rand(0, Math.PI * 2);
+                const rad = rand(0, maxR * 0.98);
+                return {
+                    theta0,
+                    rad,
+                    r: rand(0.25, 1.1),
+                    base: rand(0.35, 0.85),
+                    amp: rand(0.15, 0.35),
+                    freq: rand(8, 10),
+                    phase: Math.random() * Math.PI * 2,
+                    blur: rand(0, 1.2),
+                    nextFlareAt: nowS + rand(12, 32),
+                    flareStart: 0,
+                    flareDur: 0,
+                    flaring: false,
+                    color: colors[Math.floor(rand(0, colors.length))]
+                };
+            });
+        }
+        function draw(ts) {
+            const t = ts / 1000;
+            ctx.clearRect(0, 0, width, height);
+            ctx.save();
+            ctx.globalCompositeOperation = 'lighter';
+            const cx = width / 2, cy = height / 2;
+            const ROT_SPEED = 0.02;
+            for (let i = 0; i < stars.length; i++) {
+                const s = stars[i];
+                const theta = s.theta0 + t * ROT_SPEED;
+                const x = cx + Math.cos(theta) * s.rad;
+                const y = cy + Math.sin(theta) * s.rad;
+                if (!s.flaring && t >= s.nextFlareAt) {
+                    s.flaring = true;
+                    s.flareStart = t;
+                    s.flareDur = rand(2, 4);
+                    s.nextFlareAt = t + s.flareDur + rand(10, 28);
+                } else if (s.flaring && t >= s.flareStart + s.flareDur) {
+                    s.flaring = false;
+                }
+                const tw = s.base + s.amp * Math.sin(s.freq * t + s.phase);
+                let alpha = Math.max(0, Math.min(1, tw));
+                let rScale = 1;
+                let glowMul = 1;
+                if (s.flaring) {
+                    const p = Math.max(0, Math.min(1, (t - s.flareStart) / s.flareDur));
+                    const bell = Math.sin(p * Math.PI);
+                    alpha = Math.min(1, alpha + 0.65 * bell + 0.2);
+                    rScale = 1 + 0.7 * bell;
+                    glowMul = 1 + 2.5 * bell;
+                }
+                ctx.beginPath();
+                ctx.fillStyle = `${s.color}${alpha})`;
+                if (s.blur > 0 || s.flaring) {
+                    ctx.shadowColor = `${s.color}0.8)`;
+                    ctx.shadowBlur = (s.blur * 2 + 2) * glowMul;
+                } else {
+                    ctx.shadowBlur = 0;
+                }
+                ctx.arc(x, y, s.r * rScale, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            ctx.restore();
+            requestAnimationFrame(draw);
+        }
+        sizeCanvas();
+        requestAnimationFrame(draw);
+        window.addEventListener('resize', sizeCanvas);
+    })();
+    // Cosmic dust/particle CSS
+    (function() {
+        const style = document.createElement('style');
+        style.innerHTML = `
+        .cosmic-dust {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #fff 0%, #0fffcf 60%, #2e2a6b00 100%);
+            opacity: 0.18;
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-38px) scale(1);
+            animation: cosmic-dust-orbit 3.2s linear infinite;
+            animation-delay: var(--delay, 0s);
+        }
+        @keyframes cosmic-dust-orbit {
+            0% { opacity: 0.18; transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-38px) scale(1); }
+            50% { opacity: 0.38; transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-44px) scale(1.2); }
+            100% { opacity: 0.18; transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-38px) scale(1); }
+        }
+        `;
+        document.head.appendChild(style);
+    })();
+    </script>
+</body>
+</html>
