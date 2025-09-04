@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PAUL STOKREEF</title>
+    <title>Paul Stokreef</title>
+    <!-- Favicon: Simple P icon as SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle fill='%23000' cx='32' cy='32' r='32'/%3E%3Ctext x='50%' y='54%' text-anchor='middle' font-size='38' font-family='Space Grotesk,Arial,sans-serif' fill='%23fff' font-weight='bold' dy='.1em'%3EP%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -132,38 +134,48 @@
 </head>
 <body>
     <canvas id="starfield" aria-hidden="true"></canvas>
-    <div class="center-stack" id="content">
-      <nav class="main-nav" aria-label="Main">
-        <a href="projects.html" class="nav-item">Projects</a>
-        <a href="contact.html" class="nav-item">Contact</a>
-        <a href="about.html" class="nav-item">About</a>
-      </nav>
-      <main class="name" aria-label="PAUL STOKREEF">
-        <span class="word paul" aria-hidden="true">
-          <span class="letter" data-i="0">P</span>
-          <span class="letter" data-i="1">a</span>
-          <span class="letter" data-i="2">u</span>
-          <span class="letter" data-i="3">l</span>
-        </span>
-        <span class="letter" data-i="0"> </span>
-        <span class="letter" data-i="0"> </span>
-        <span class="letter" data-i="0"> </span>
-        <span class="letter" data-i="0"> </span>
-        <span class="letter" data-i="0"> </span>
-        <span class="letter" data-i="0"> </span>
-        <span class="word stokreef" aria-hidden="true">
-          <span class="letter" data-i="0">S</span>
-          <span class="letter" data-i="1">t</span>
-          <span class="letter" data-i="2">o</span>
-          <span class="letter" data-i="3">k</span>
-          <span class="letter" data-i="4">r</span>
-          <span class="letter" data-i="5">e</span>
-          <span class="letter" data-i="6">e</span>
-          <span class="letter" data-i="7">f</span>
-        </span>
-      </main>
-      <div class="subtitle" id="subtitle">A Full-Time Cybersecurity Student and Developer In Training</div>
-    </div>
+
+        <div class="center-stack" id="content">
+            <nav class="main-nav" aria-label="Main">
+                <a href="projects.html" class="nav-item">Projects</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+                <a href="about.html" class="nav-item">About</a>
+            </nav>
+            <main class="name" aria-label="PAUL STOKREEF">
+                <span class="word paul" aria-hidden="true">
+                    <span class="letter" data-i="0">P</span>
+                    <span class="letter" data-i="1">a</span>
+                    <span class="letter" data-i="2">u</span>
+                    <span class="letter" data-i="3">l</span>
+                </span>
+                <span class="letter" data-i="0"> </span>
+                <span class="letter" data-i="0"> </span>
+                <span class="letter" data-i="0"> </span>
+                <span class="letter" data-i="0"> </span>
+                <span class="letter" data-i="0"> </span>
+                <span class="letter" data-i="0"> </span>
+                <span class="word stokreef" aria-hidden="true">
+                    <span class="letter" data-i="0">S</span>
+                    <span class="letter" data-i="1">t</span>
+                    <span class="letter" data-i="2">o</span>
+                    <span class="letter" data-i="3">k</span>
+                    <span class="letter" data-i="4">r</span>
+                    <span class="letter" data-i="5">e</span>
+                    <span class="letter" data-i="6">e</span>
+                    <span class="letter" data-i="7">f</span>
+                </span>
+            </main>
+            <div class="subtitle" id="subtitle">A Full-Time Cybersecurity Student and Developer In Training</div>
+        </div>
+
+        <!-- Mobile warning overlay -->
+        <div id="mobile-warning">
+            <div class="mobile-warning-content">
+                <strong>Sorry!</strong><br>
+                This website is only accessible on desktop for now.<br>
+                Please visit from a larger screen.
+            </div>
+        </div>
 
         <style>
             .main-nav {
@@ -360,6 +372,40 @@
         });
     </script>
     <style>
+            /* Mobile warning overlay styles */
+            #mobile-warning {
+                display: none;
+                position: fixed;
+                z-index: 10000;
+                inset: 0;
+                background: rgba(10,10,10,0.97);
+                color: #fff;
+                font-family: var(--font);
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 0 2em;
+            }
+            #mobile-warning .mobile-warning-content {
+                background: rgba(30,30,30,0.92);
+                border-radius: 1.2em;
+                box-shadow: 0 4px 32px #0008;
+                padding: 2.2em 1.2em 2em 1.2em;
+                font-size: 1.25rem;
+                font-weight: 500;
+                max-width: 420px;
+                margin: 0 auto;
+                line-height: 1.6;
+                letter-spacing: 0.01em;
+            }
+            @media (max-width: 700px), (max-width: 900px) and (orientation: portrait) {
+                #mobile-warning {
+                    display: flex;
+                }
+                #content, .copyright {
+                    display: none !important;
+                }
+            }
       .subtitle {
         margin-top: 2.2rem;
         font-size: 1.15rem;
@@ -398,22 +444,25 @@
     </style>
 
     <script>
-    document.querySelectorAll('.nav-item').forEach(link => {
-        link.addEventListener('click', function(e) {
-        e.preventDefault(); // stop immediate nav
+    // Only run nav fade on desktop
+    if (window.matchMedia('(min-width: 701px)').matches) {
+      document.querySelectorAll('.nav-item').forEach(link => {
+          link.addEventListener('click', function(e) {
+          e.preventDefault(); // stop immediate nav
 
-        const href = this.getAttribute('href');
-        const content = document.getElementById('content');
+          const href = this.getAttribute('href');
+          const content = document.getElementById('content');
 
-        // Add fade-out class
-        content.classList.add('fade-out');
+          // Add fade-out class
+          content.classList.add('fade-out');
 
-        // Wait for transition to complete, then navigate
-        setTimeout(() => {
-            window.location.href = href;
-        }, 600); // match transition duration
-        });
-    });
+          // Wait for transition to complete, then navigate
+          setTimeout(() => {
+              window.location.href = href;
+          }, 600); // match transition duration
+          });
+      });
+    }
     </script>
 
     <footer class="copyright">© MMXXV Paul S. All rights reserved.</footer>
