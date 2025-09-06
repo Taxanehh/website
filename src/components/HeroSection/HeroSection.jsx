@@ -517,7 +517,7 @@ const HeroSection = ({ userData }) => {
                 >
                   <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-cyan-400 shadow-lg shadow-cyan-400/30">
                     <img
-                      src="/assets/astronaut-portrait.png"
+                      src="/assets/astronaut-portrait.jpg"
                       alt="Ehiane Oigiagbe - Space Explorer"
                       className="w-full h-full object-cover"
                       onError={(e) => {
