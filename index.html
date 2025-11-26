@@ -1,28 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-  <meta charset="UTF-8" />
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://favicon.io/emoji/emoji_u1f17f.png" />
-  <link rel="shortcut icon" href="/favicon-portfolio.ico" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paul Stokreef</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        margin: 0;
-        overflow-x: hidden;
-        background: #0a0a0a;
-      }
-      * {
-        box-sizing: border-box;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Paul Stokreef – Taxanehh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<main class="intro">
+    <h1>Paul Stokreef</h1>
+    <h2>Taxanehh</h2>
+    <p>Cybersecurity • Forensics • CTF Player</p>
+</main>
+
+<!-- TASKBAR -->
+<div class="taskbar">
+    <div class="taskbar-icons">
+
+        <div class="icon" id="open-terminal">
+            <svg viewBox="0 0 24 24">
+                <path fill="#ffffff" d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 3l2 2-2 2 1.4 1.4L11.8 11 9.4 8.6 8 10zm4 6h4v-2h-4v2z"/>
+            </svg>
+        </div>
+
+        <div class="icon" id="open-docs">
+            <svg viewBox="0 0 24 24">
+                <path fill="#ffffff" d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V9h5.5L14 3.5z"/>
+            </svg>
+        </div>
+
+        <div class="icon" id="open-info">
+            <svg viewBox="0 0 24 24">
+                <path fill="#ffffff" d="M11 17h2v-6h-2v6zm0-8h2V7h-2v2zm1-7C6.48 2 2 6.48 2 12s4.48 10 10 10 
+                10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 
+                0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 
+                8-3.59 8-8 8z"/>
+            </svg>
+        </div>
+
+    </div>
+</div>
+
+<!-- TERMINAL WINDOW -->
+<div id="terminal-window" class="terminal hidden">
+    <div class="terminal-header">
+        <span class="dot red" id="close-terminal"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <div class="terminal-title">Terminal — Taxanehh</div>
+    </div>
+
+    <div class="terminal-body" id="terminal-body">
+    </div>
+</div>
+
+<!-- WRITEUPS WINDOW -->
+<div id="docs-window" class="docs hidden">
+    <div class="docs-header">
+        <span class="dot red" id="close-docs"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <div class="docs-title">Writeups — Taxanehh</div>
+    </div>
+
+    <div class="docs-body">
+
+        <!-- LEFT SIDEBAR -->
+        <div class="docs-sidebar">
+
+            <!-- CATEGORY: TUDCTF -->
+            <h3>TUDCTF Writeups</h3>
+            <ul>
+                <li data-file="nothing.md">TUDCTF 2025 — Nothing App</li>
+                <li data-file="pizzano.md">TUDCTF 2025 — Pizzano's Domi</li>
+                <li data-file="signs.md">TUDCTF 2025 — Yearn for the Signs</li>
+            </ul>
+
+            <!-- CATEGORY: HTB -->
+            <h3 style="margin-top:20px;">HTB Writeups</h3>
+            <ul>
+                <li data-link="https://medium.com/@Taxaneh/bashed-write-up-52966f6e8539">HTB — Bashed</li>
+                <li data-link="https://medium.com/@Taxaneh/cronos-write-up-06f9dddc5d0e">HTB — Cronos</li>
+                <li data-link="https://medium.com/@Taxaneh/htb-bountyhunter-write-up-33b26405ff2b">HTB — BountyHunter</li>
+            </ul>
+
+        </div>
+
+        <!-- CONTENT AREA -->
+        <div class="docs-content" id="docs-content">
+            <p>Select a writeup on the left.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- INFO WINDOW -->
+<div id="info-window" class="info hidden">
+    <div class="info-header">
+        <span class="dot red" id="close-info"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <div class="info-title">About — Taxanehh</div>
+    </div>
+
+    <div class="info-body">
+        
+        <h2>About Me</h2>
+        <p>
+            Cybersecurity student with a background in Artificial Intelligence.  
+            Passionate about penetration testing, HackTheBox, and CTF competitions  
+            both online and in real life.  
+            I enjoy writing writeups to deepen my understanding  
+            and help others learn.
+        </p>
+
+        <h3>Links</h3>
+        <ul class="info-links">
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/paul-stokreef" target="_blank">linkedin.com/in/paul-stokreef</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/Taxanehh" target="_blank">github.com/Taxanehh</a></li>
+            <li><strong>Discord:</strong> paulus2692</li>
+            <li><strong>Email:</strong> <a href="mailto:paul.stokreef@planet.nl">paul.stokreef@planet.nl</a></li>
+        </ul>
+
+    </div>
+</div>
+
+<script src="js/particles.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
 </html>

@@ -1,0 +1,371 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background: #000000;
+    font-family: "Roboto", sans-serif;
+    color: #f2f2f2;
+}
+
+
+/* Particles canvas */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Your fix */
+}
+
+/* Centered introduction block */
+.intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1; /* sits above particles */
+}
+
+.intro h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+}
+
+.intro h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    opacity: 0.6;
+}
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.taskbar-icons {
+    display: flex;
+    gap: 28px;
+}
+
+.taskbar .icon {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.8;
+}
+
+.taskbar .icon:hover {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+.taskbar .icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #ffffff;
+}
+
+/* Terminal Window */
+.terminal {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    max-width: 90%;
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    border-radius: 6px;
+    font-family: monospace;
+    color: #00ff95;
+    box-shadow: 0 0 25px rgba(0,0,0,0.35);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Header (traffic light buttons) */
+.terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background: #111;
+    border-bottom: 1px solid #333;
+}
+
+.terminal-header .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-title {
+    margin-left: auto;
+    margin-right: auto;
+    color: #777;
+    font-size: 0.85rem;
+}
+
+/* Terminal body */
+.terminal-body {
+    padding: 12px;
+    height: 300px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+}
+
+/* Loading cursor */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: #00ff95;
+    animation: blink 0.8s infinite alternate;
+}
+
+.dot.red:hover {
+    background: #ff8a80;
+    cursor: pointer;
+}
+
+/* DOCUMENTS WINDOW */
+.docs {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    max-width: 95%;
+    height: 550px;
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    z-index: 10;
+    color: #eaeaea;
+}
+
+.docs-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px;
+    background: #111;
+    border-bottom: 1px solid #333;
+}
+
+.docs-title {
+    margin-left: auto;
+    margin-right: auto;
+    color: #777;
+}
+
+.docs-body {
+    display: flex;
+    height: 100%;
+}
+
+/* Sidebar */
+.docs-sidebar {
+    width: 240px;
+    background: #141414;
+    border-right: 1px solid #333;
+    padding: 12px;
+}
+
+.docs-sidebar h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #00ff95;
+}
+
+.docs-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.docs-sidebar li {
+    padding: 8px;
+    margin-bottom: 5px;
+    background: #1c1c1c;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.docs-sidebar li:hover {
+    background: #272727;
+}
+
+/* Content area */
+.docs-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    white-space: normal;
+}
+
+/* Markdown styling */
+.docs-content h1,
+.docs-content h2,
+.docs-content h3 {
+    color: #00ff95;
+}
+
+.docs-content pre {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    overflow-x: auto;
+}
+
+.docs-content code {
+    color: #ffdd88;
+}
+
+.docs-content a {
+    color: #00bbff;
+}
+
+.docs-sidebar h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: #00ff95;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.docs-header .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.docs-header .dot.red:hover {
+    background: #ff8a80;
+    cursor: pointer;
+}
+
+/* INFO WINDOW */
+.info {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    max-width: 95%;
+    height: 400px;
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    z-index: 10;
+    color: #eaeaea;
+    font-family: "Inter", sans-serif;
+}
+
+.info-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px;
+    background: #111;
+    border-bottom: 1px solid #333;
+}
+
+.info-title {
+    margin-left: auto;
+    margin-right: auto;
+    color: #777;
+}
+
+.info-body {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.info-body h2 {
+    color: #00ff95;
+    margin-bottom: 10px;
+}
+
+.info-body h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #00ff95;
+}
+
+.info-links {
+    list-style: none;
+    padding: 0;
+}
+
+.info-links li {
+    margin-bottom: 8px;
+}
+
+.info-links a {
+    color: #00bbff;
+    text-decoration: none;
+}
+
+.info-links a:hover {
+    text-decoration: underline;
+}
+
+.info-header .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.info-header .dot.red:hover {
+    background: #ff8a80;
+    cursor: pointer;
+}
+
+
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
